@@ -41,7 +41,13 @@ function App() {
   return (
     <div className="App">
       <h1>AI Image Generator</h1>
+      <div>
+        <input placeholder='Enter Prompt'/>
+      </div>
       <button onClick={fetchImage}>GENERATE IMAGE</button>
+     <div>
+     <img src={image}/>
+      </div> 
     </div>
   );
 }
