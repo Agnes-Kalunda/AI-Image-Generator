@@ -22,15 +22,18 @@ function App() {
 
   async function fetchImage(){
     try{
+      setIsLoading(true);
       const response = await openai.createImage({
         prompt: prompt,
         n: 1,
         size: "512*512",
       })
 
-      console.log(response.data.data[0].url);
+      setImage(response.data.data[0].url);
+      setIsLoading(false);
 
     } catch(e) {
+      setIsLoading(false);
       console.log(e);
     }
   }
@@ -42,11 +45,21 @@ function App() {
     <div className="App">
       <h1>AI Image Generator</h1>
       <div>
-        <input placeholder='Enter Prompt'/>
+        <input 
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder='Enter Prompt'/>
       </div>
       <button onClick={fetchImage}>GENERATE IMAGE</button>
      <div>
-     <img src={image}/>
+      {isLoading ? (
+        <>
+        <p>Image Loading .....</p>
+        <p>Please Wait.</p>
+        </>
+      ):
+      <img src={image}/>
+      }
+    
       </div> 
     </div>
   );
