@@ -1,12 +1,26 @@
 import { useState } from 'react';
 import './App.css';
+import { configuration, OpenAIApi } from "openai";
 
-const apiKey = process.env.REACT_APP_API_KEY; // Importing the API key
+const ApiKey = process.env.REACT_APP_API_KEY; // Importing the API key
 
+const configuration = new Configuration({
+  apikey: ApiKey,
+});
+
+const openai = new OpenAIApi(configuration);
 
 function App() {
+
+  async function fetchImage(){
+    try{
+
+    } catch(e) {
+      console.log(e);
+    }
+  }
   
-  const [count, setCount] = useState(0);
+  
 
   console.log(apiKey); //Accessing the api key
   return (
