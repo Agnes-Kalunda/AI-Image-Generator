@@ -44,12 +44,17 @@ function App() {
   return (
     <div className="App">
       <h1>AI Image Generator</h1>
-      <div>
+      
+      <div className='prompt'>
+      <div className='prompt2'>
         <input 
           onChange={(e) => setPrompt(e.target.value)}
           placeholder='Enter Prompt'/>
       </div>
       <button onClick={fetchImage}>GENERATE IMAGE</button>
+
+        </div>
+       
      <div>
       {isLoading ? (
         <>

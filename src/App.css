@@ -1,5 +1,29 @@
 .App {
   text-align: center;
+  
+}
+
+.prompt {
+  display: flex;
+  justify-content: center;
+  height: 5%;
+  
+}
+
+/* .button {
+  margin-top: 7em ;
+  width: 5%;
+  height : 5%
+}
+
+.prompt2 {
+  margin-top:.7em;
+  width: 5%;
+  height: 5%;
+} */
+
+#inputBox{
+  border: solid black 1
 }
 
 .App-logo {
